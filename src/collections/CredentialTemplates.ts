@@ -1,5 +1,6 @@
 import { CollectionConfig } from "payload/types";
-
+import Content from "../blocks/Content";
+import studentList from "../fields/StudentList";
 const placeHolderVc = {
   "@context": [
     "https://www.w3.org/2018/credentials/v1",
@@ -38,22 +39,67 @@ const placeHolderVc = {
 const CredentialsTemplatesCollection: CollectionConfig = {
   slug: "credential-templates",
   admin: {
-    defaultColumns: ['title', 'id', 'status'],
+    defaultColumns: ["title", "id", "status"],
+    useAsTitle: "title",
   },
   versions: {
     drafts: true,
   },
   fields: [
     {
+      name: "templateMeta",
+      type: "group",
+      fields: [
+        {
+          name: "title",
+          type: "text",
+          required: true,
+          minLength: 20,
+          maxLength: 100,
+        },
+        {
+          name: "description",
+          type: "textarea",
+          required: true,
+          minLength: 40,
+          maxLength: 160,
+        },
+        {
+          name: "keywords",
+          label: "Keywords",
+          type: "text",
+        },
+      ],
+    },
+    {
       name: "credentialTitle",
       type: "text",
-      unique: true,
+      required: true,
     },
     {
       name: "credential_templates_json", // required
       type: "json", // required
       defaultValue: placeHolderVc,
       required: true,
+    },
+    {
+      type: "tabs",
+      tabs: [
+        {
+          label: "Post Media",
+          fields: [studentList],
+        },
+        {
+          label: "Post Layout",
+          fields: [
+            {
+              name: "layout",
+              type: "blocks",
+              blocks: [Content],
+            },
+          ],
+        },
+      ],
     },
   ],
 };

@@ -13,7 +13,6 @@ const Students: CollectionConfig = {
         name: 'studentEmail', // required
         type: 'email', // required
         label: 'Contact Email Address',
-        required: true,
       }
     // Email added by default
     // Add more fields as needed
