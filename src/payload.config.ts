@@ -1,6 +1,8 @@
 import { buildConfig } from 'payload/config';
 import path from 'path';
-// import Examples from './collections/Examples';
+ import Examples from './collections/Examples';
+ import Students from './collections/Students';
+ import CredentialsTemplatesCollection from './collections/Credentials';
 import Users from './collections/Users';
 
 export default buildConfig({
@@ -11,7 +13,8 @@ export default buildConfig({
   collections: [
     Users,
     // Add Collections here
-    // Examples,
+    Students,
+    CredentialsTemplatesCollection,
   ],
   typescript: {
     outputFile: path.resolve(__dirname, 'payload-types.ts'),
