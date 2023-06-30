@@ -82,25 +82,25 @@ const CredentialsTemplatesCollection: CollectionConfig = {
       defaultValue: placeHolderVc,
       required: true,
     },
-    {
-      type: "tabs",
-      tabs: [
-        {
-          label: "Post Media",
-          fields: [studentList],
-        },
-        {
-          label: "Post Layout",
-          fields: [
-            {
-              name: "layout",
-              type: "blocks",
-              blocks: [Content],
-            },
-          ],
-        },
-      ],
-    },
+    // {
+    //   type: "tabs",
+    //   tabs: [
+    //     {
+    //       label: "Post Media",
+    //       fields: [studentList],
+    //     },
+    //     {
+    //       label: "Post Layout",
+    //       fields: [
+    //         {
+    //           name: "layout",
+    //           type: "blocks",
+    //           blocks: [Content],
+    //         },
+    //       ],
+    //     },
+    //   ],
+    // },
   ],
 };
 

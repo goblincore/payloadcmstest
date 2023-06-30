@@ -6,6 +6,7 @@ import path from 'path';
  import Students from './collections/Students';
  import CredentialsTemplatesCollection from './collections/CredentialTemplates';
 import Users from './collections/Users';
+import AfterNavLinks from './components/AfterNavLinks';
 
 import CustomDefaultRoute from './components/CustomComponent';
 
@@ -14,6 +15,9 @@ export default buildConfig({
   admin: {
     user: Users.slug,
     components: {
+      afterNavLinks: [
+        AfterNavLinks,
+      ],
       routes: [
         {
           path: '/issue-credentials',

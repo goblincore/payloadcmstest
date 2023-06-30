@@ -12,7 +12,7 @@ import { SanitizedCollectionConfig } from 'payload/dist/collections/config/types
 import Students from '../../collections/Students';
 import { useListDrawer } from 'payload/dist/admin/components/elements/ListDrawer';
 import Button from 'payload/dist/admin/components/elements/Button';
-
+import CredentialsTemplatesCollection from '../../collections/CredentialTemplates';
 import { ListDrawerProps } from 'payload/dist/admin/components/elements/ListDrawer/types';
 import { GetFilterOptions } from 'payload/dist/admin/components/utilities/GetFilterOptions';
 import { FilterOptionsResult } from 'payload/dist/admin/components/forms/field-types/Relationship/types';
@@ -21,7 +21,7 @@ import { FilterOptionsResult } from 'payload/dist/admin/components/forms/field-t
 
 const baseClass = 'upload';
 
-export type SelectStudentsInputProps = Omit<UploadField, 'type'> & {
+export type SelectTemplateInputProps = Omit<UploadField, 'type'> & {
   showError?: boolean
   errorMessage?: string
   readOnly?: boolean
@@ -41,7 +41,7 @@ export type SelectStudentsInputProps = Omit<UploadField, 'type'> & {
   filterOptions: FilterOptions
 }
 
-const SelectStudents: React.FC<SelectStudentsInputProps> = (props) => {
+const SelectTemplate: React.FC<SelectTemplateInputProps> = (props) => {
   const {
     path = '',
     required,
@@ -57,7 +57,7 @@ const SelectStudents: React.FC<SelectStudentsInputProps> = (props) => {
     showError,
     serverURL = 'http://localhost:3000',
     api = '/api',
-    collection = Students,
+    collection = CredentialsTemplatesCollection,
     errorMessage,
     filterOptions,
   } = props;
@@ -192,4 +192,4 @@ const SelectStudents: React.FC<SelectStudentsInputProps> = (props) => {
   );
 };
 
-export default SelectStudents
+export default SelectTemplate
