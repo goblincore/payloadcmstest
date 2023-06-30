@@ -1,8 +1,9 @@
 import { buildConfig } from 'payload/config';
 import path from 'path';
  import Examples from './collections/Examples';
+ import Credentials from './collections/Credentials';
  import Students from './collections/Students';
- import CredentialsTemplatesCollection from './collections/Credentials';
+ import CredentialsTemplatesCollection from './collections/CredentialTemplates';
 import Users from './collections/Users';
 
 export default buildConfig({
@@ -14,6 +15,7 @@ export default buildConfig({
     Users,
     // Add Collections here
     Students,
+    Credentials,
     CredentialsTemplatesCollection,
   ],
   typescript: {
